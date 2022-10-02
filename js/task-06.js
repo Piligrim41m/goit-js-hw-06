@@ -4,7 +4,7 @@ const style = document.querySelector('style')
 input.addEventListener('blur', onBlurInput)
 function onBlurInput(event) {
     
-    if (input.value.length == input.dataset.length) {        
+    if (input.value.length === Number(input.dataset.length)) {        
         input.classList.add('valid');  
         input.classList.remove('invalid'); 
     } else {

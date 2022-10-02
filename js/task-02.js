@@ -6,13 +6,21 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-ingredients.forEach((ingredient) => {
-  const newElementLi = document.createElement("li")
-  newElementLi.classList.add("item");
-  newElementLi.textContent = ingredient;
-  const parentElement = document.querySelector('#ingredients');
-  parentElement.appendChild(newElementLi);
- })
+const parentElement = document.querySelector('#ingredients');
+function creatLi(text) {
+  let newElementLi = document.createElement("li")
+   newElementLi.classList.add("item");
+  newElementLi.textContent = text;
+  return newElementLi;
+};
+
+const listIngredients = ingredients.map((ingredient) => {
+  return creatLi(ingredient)
+});
+
+parentElement.append(...listIngredients);
+  
+
 
 
 
